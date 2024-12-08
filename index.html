@@ -9,7 +9,7 @@
         /* Global reset and body styles */
         h3 {
             font-weight: 600%;
-            color: #ffbb33;
+            color: rgb(73, 73, 235);
         }
     
         * {
@@ -36,13 +36,13 @@
         }
     
         a:hover {
-            color: #ffbb33;
+            color: navy;
         }
     
         /* Button styling (unified for all buttons) */
         button {
             padding: 1rem;
-            background: #ffbb33;
+            background: white;
             color: black;
             border: none;
             border-radius: 8px;
@@ -53,7 +53,8 @@
         }
     
         button:hover {
-            background-color: #ff9900;
+            background-color: black;
+            color: white;
         }
     
         /* Header */
@@ -74,7 +75,7 @@
     
         header h1 {
             font-size: 1.8rem;
-            color: #ffbb33;
+            color: navy;
             text-transform: uppercase;
         }
     
@@ -102,37 +103,63 @@
             font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: #ffbb33;
+            color: navy;
             padding: 10px;
         }
     
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            margin-left: auto;
-        }
-    
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin-left: auto;
-        }
-    
-        .nav-links {
-            display: flex;
-            margin-left: auto;
-        }
-    
-        .nav-links.hidden {
-            display: none;
-        }
+       /* Hamburger Menu */
+.hamburger {
+    display: none; /* Initially hidden for larger screens */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Align the hamburger to the right */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin-left: auto; /* Align the bars to the right within the hamburger */
+}
+
+.nav-links {
+    display: flex;       /* Flex layout for navigation links */
+    margin-left: auto;   /* Push the container to the right */
+    justify-content: flex-end; /* Align links within the container to the right */
+    gap: 15px;           /* Add space between navigation links */
+    list-style: none;    /* Remove default bullet points (if using a list) */
+}
+
+.nav-links.hidden {
+    display: none; /* Hide the links when in hidden state */
+}
+
     
         /* For screens smaller than 768px (phones and small tablets) */
 @media (max-width: 768px) {
+    .gallery {
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        }
+
+    .gallery img {
+        width: 10%;
+        height: 80%;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        transition: all ease-in-out 0.2s;
+        }
+
+    .gallery img:hover {
+        width: 100%;
+        height: 100%;
+        }
+
     header h1 {
         font-size: 1.5rem; /* Adjust header font size */
     }
@@ -141,11 +168,12 @@
         flex-direction: column;
         position: absolute;
         top: 70px;
-        left: 20px;
+        right: 31px;
         background: #2d2d2d;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        align-items: center;
     }
 
     .hamburger {
@@ -167,7 +195,12 @@
     .features ul li {
         font-size: 1rem;
     }
+
+    .welcome {
+        display: none;
+    }
 }
+
 
 /* For larger screens (tablets and desktop) */
 @media (min-width: 769px) {
@@ -188,6 +221,12 @@
         font-size: 1.2rem;
     }
 }   
+
+@media (max-width: 1024px) {
+    .welcome {
+        display: none;
+    }
+}
         /* Container and Section */
         .container {
             max-width: 1200px;
@@ -209,7 +248,7 @@
         .section h2 {
             font-size: 2.5rem;
             font-weight: 600;
-            color: #ffbb33;
+            color: rgb(73, 73, 235);
             margin-bottom: 2rem;
         }
     
@@ -242,7 +281,7 @@
         .contact h2 {
             font-size: 2.5rem;
             font-weight: 600;
-            color: #ffbb33;
+            color: rgb(73, 73, 235);
             margin-bottom: 2rem;
         }
     
@@ -254,31 +293,90 @@
             padding: 2rem 0;
         }
 
-                /* Gallery Section */
+        .gallery-phones{display: none;}
 
-                .gallery {
-                    width: 90%;
-                    height: 250px;
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
+                /* Gallery container styling */
+.gallery {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    gap: 10px;
+    scroll-snap-type: x mandatory;  /* Enable smooth snapping of images */
+}
+
+/* Image styling */
+.gallery img {
+    width: 20%;  /* Adjust the width for larger screens */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+    transition: all ease-in-out 0.2s;
+    scroll-snap-align: start;  /* Align the images for smooth snapping */
+}
+
+/* Hover effect */
+.gallery img:hover {
+    width: 40%;
+}
+
+/* Optional: styling for scrollbar */
+.gallery::-webkit-scrollbar {
+    height: 8px;  /* Vertical scrollbar thickness */
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);  /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+/* Optional: hiding scrollbar for cleaner look */
+.gallery::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar (use if you prefer not to show it) */
+}
+
+
+                    .welcome {
+                        top: 20%;
+                        width: 100%;
+                        text-align: center;
+                        z-index: 999;
+                        transition: opacity 0.3s ease, transform 0.3s ease;
                     }
-            
-                    .gallery img {
-                    width: 10%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 10px;
-                    border: 2px solid rgba(255, 255, 255, 0.6);
-                    transition: all ease-in-out 0.2s;
-                    }
-            
-                    .gallery img:hover {
-                    width: 25%;
+                
+                    .welcome.hidden {
+                        opacity: 0;
+                        transform: translateY(-80px);
+                        pointer-events: none;
                     }
 
 
- 
+                    @media (max-width: 430px) {
+                        .gallery {display: none;}
+                        .gallery-phones {
+                            width: 100%;
+                            height: 250px;
+                            display: flex;
+                            gap: 10px;
+                            overflow-x: auto;
+                        }
+                        
+                        /* Image styling */
+                        .gallery-phones img {
+                            width: 40%;  /* Adjust the width for larger screens */
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            border: 2px solid #1a1a1a;
+                            transition: all ease-in-out 0.2s;
+                            scroll-snap-align: start;  /* Align the images for smooth snapping */
+                        }
+
+                        .gallery-phones img:hover{
+                            width: 100%;  /* Adjust the width for larger screens */
+                        }
+                    }
     </style>
     
 </head>
@@ -310,6 +408,11 @@
         </div>
     </header>
 
+    <div class="welcome" id="welcome">
+    <br><br><br><br><br><br><br><br><br><br><h1>Welcome to the</h1>
+    <h3>future</h3>
+    <br><br><br><br><br><br><br>
+    </div>
     <div class="container">
         <!-- About Section -->
         <section id="about" class="section">
@@ -336,7 +439,14 @@
             <div class="gallery">
                 <!-- Add as many images as you like -->
                 <img src="wall e.jpg" alt="Image 1">
-                <img src="wall e1.jpg" alt="Image 2">
+                <img src="wall e3.webp" alt="Image 3">
+                <img src="wall e4.jpg" alt="Image 4">
+                <img src="wall e5.jpg" alt="Image 5">
+                <img src="wall e7.webp" alt="Image 6">
+            </div>
+            <div class="gallery-phones">
+                <!-- Add as many images as you like -->
+                <img src="wall e.jpg" alt="Image 1">
                 <img src="wall e3.webp" alt="Image 3">
                 <img src="wall e4.jpg" alt="Image 4">
                 <img src="wall e5.jpg" alt="Image 5">
@@ -394,6 +504,15 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        document.addEventListener('scroll', () => {
+            const welcomeElement = document.querySelector('.welcome');
+            if (window.scrollY > 100) { // Adjust scroll threshold as needed
+                welcomeElement.classList.add('hidden');
+            } else {
+                welcomeElement.classList.remove('hidden');
+            }
         });
     </script>
 </body>
