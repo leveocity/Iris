@@ -239,6 +239,7 @@
         }
     
         .section {
+            text-align: center;
             padding: 4rem 2rem;
             background: #1e293b;
             margin-bottom: 3rem;
@@ -272,6 +273,7 @@
     
         /* Contact Section */
         .contact {
+            text-align: center;
             background: #1e293b;
             padding: 4rem 2rem;
             border-radius: 10px;
@@ -309,7 +311,7 @@
 
 /* Image styling */
 .gallery img {
-    width: 10%;  /* Adjust the width for larger screens */
+    width: 20%;  /* Adjust the width for larger screens */
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -322,45 +324,45 @@
 
                         /* Sequential expansion with staggered timing */
                         .gallery img:nth-child(1) {
-                            animation: expand 10s;
+                            animation: expand 5s;
                             animation-delay: 0s; /* First image starts immediately */
                         }
                         
                         .gallery img:nth-child(2) {
-                            animation: expand 10s;
-                            animation-delay: 10s; /* Second image starts after 10s */
+                            animation: expand 5s;
+                            animation-delay: 5s; /* Second image starts after 10s */
                         }
                         
                         .gallery img:nth-child(3) {
-                            animation: expand 10s;
-                            animation-delay: 20s; /* Third image starts after 20s */
+                            animation: expand 5s;
+                            animation-delay: 10s; /* Third image starts after 20s */
                         }
                         
                         .gallery img:nth-child(4) {
-                            animation: expand 10s;
-                            animation-delay: 30s; /* Fourth image starts after 30s */
+                            animation: expand 5s;
+                            animation-delay: 15s; /* Fourth image starts after 30s */
                         }
                         
                         /* Keyframes for expanding and shrinking */
                         @keyframes expand {
                             0% {
-                                width: 10%; /* Start at 50% width */
+                                width: 20%; /* Start at 50% width */
                                 opacity: 0.75; /* Dimmed state */
                             }
                             10% {
-                                width: 25%; /* Expand quickly to 100% width */
+                                width: 30%; /* Expand quickly to 100% width */
                                 opacity: 1; /* Fully visible */
                             }
                             50% {
-                                width: 25%; /* Stay at 100% width */
+                                width: 30%; /* Stay at 100% width */
                                 opacity: 1; /* Fully visible */
                             }
                             60% {
-                                width: 10%;
+                                width: 20%;
                                 opacity: 0.75;
                             }
                             100% {
-                                width: 10%; /* Shrink quickly back to 50% width */
+                                width: 20%; /* Shrink quickly back to 50% width */
                                 opacity: 0.75; /* Dimmed state */
                             }
                         }
@@ -407,26 +409,26 @@
                             opacity: 0.75; /* Dim the images initially */
                         }
                         
-                        /* Sequential expansion with staggered timing */
-                        .gallery-phones img:nth-child(1) {
-                            animation: expand 10s;
-                            animation-delay: 0s; /* First image starts immediately */
-                        }
-                        
-                        .gallery-phones img:nth-child(2) {
-                            animation: expand 10s;
-                            animation-delay: 10s; /* Second image starts after 10s */
-                        }
-                        
-                        .gallery-phones img:nth-child(3) {
-                            animation: expand 10s;
-                            animation-delay: 20s; /* Third image starts after 20s */
-                        }
-                        
-                        .gallery-phones img:nth-child(4) {
-                            animation: expand 10s;
-                            animation-delay: 30s; /* Fourth image starts after 30s */
-                        }
+                                               /* Sequential expansion with staggered timing */
+                                               .gallery img:nth-child(1) {
+                                                animation: expand 5s;
+                                                animation-delay: 0s; /* First image starts immediately */
+                                            }
+                                            
+                                            .gallery img:nth-child(2) {
+                                                animation: expand 5s;
+                                                animation-delay: 5s; /* Second image starts after 10s */
+                                            }
+                                            
+                                            .gallery img:nth-child(3) {
+                                                animation: expand 5s;
+                                                animation-delay: 10s; /* Third image starts after 20s */
+                                            }
+                                            
+                                            .gallery img:nth-child(4) {
+                                                animation: expand 5s;
+                                                animation-delay: 15s; /* Fourth image starts after 30s */
+                                            }
                         
                         /* Keyframes for expanding and shrinking */
                         @keyframes expand {
@@ -499,12 +501,7 @@
         <!-- Features Section -->
         <section id="features" class="section features">
             <h2>Specs</h2>
-            <ul>
-                <li>4dc motors</li>
-                <li>weights 3kg</li>
-                <li>2 speakers</li>
-                <li>60cm tall</li>
-            </ul>
+            <p>iris is a robot that can be controlled through your phone, remote control, iris has speakers, motors, and can move its head, it can also comunicate.</p>
         </section>
 
         <!-- Gallery Section -->
